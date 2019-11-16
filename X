@@ -6,7 +6,8 @@ for (x in labels) {
     // Create a map to pass in to the 'parallel' step so we can fire all the builds at once
     builders[label] = {
       node(label) {
-        // build steps that should happen on all nodes go here
+        sh 'pwd'
+	sleep 10
       }
     }
 }
