@@ -1,27 +1,25 @@
 def labels = ['A', 'B'] // labels for Jenkins nodes
 def builders = [:]
 pipeline {
-stages {
+
 for (x in labels) {
     def label = x 
     builders[label] = {
-      stage ("build"{
-	      node(label) {
-		echo "CHECKOUT TESTS X"
-		echo "RUN TESTS X"
-		echo "CHECKOUT TESTS Y"
-		echo "RUN TESTS Y"
+	node(label) {
+	   	stage ("build"{
+			echo "CHECKOUT TESTS X"
+			echo "RUN TESTS X"
+			echo "CHECKOUT TESTS Y"
+			echo "RUN TESTS Y"
 		}
-	}
-	stage("post"){
-		node(label){
+		stage("post"){
 			cleanWs()
 		}	
-      	}
+	 }
       }
     
 }
-}
+
 }
 
 parallel builders
