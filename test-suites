@@ -8,9 +8,7 @@ for (x in labels) {
 	echo "RUN TESTS X"
 	echo "CHECKOUT TESTS Y"
 	echo "RUN TESTS Y"
-	cleanup{
-        	deleteDir()
-    	}
+      	deleteDir()
       }
     }
 }
