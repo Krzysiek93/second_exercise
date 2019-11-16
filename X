@@ -1,4 +1,4 @@
-def labels = ['master', 'B'] // labels for Jenkins nodes
+def labels = ['A', 'B'] // labels for Jenkins nodes
 def builders = [:]
 for (x in labels) {
     def label = x 
