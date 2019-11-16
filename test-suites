@@ -1,5 +1,6 @@
 def labels = ['A', 'B'] // labels for Jenkins nodes
 def builders = [:]
+pipeline {
 for (x in labels) {
     def label = x 
     builders[label] = {
@@ -16,6 +17,7 @@ stage("post"){
 	}}
       }
     }
+}
 }
 
 parallel builders
