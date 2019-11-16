@@ -9,6 +9,7 @@ for (x in labels) {
 	echo "CHECKOUT TESTS Y"
 	echo "RUN TESTS Y"
       	deleteDir()
+	cleanws()
       }
     }
 }
