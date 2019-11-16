@@ -5,18 +5,20 @@ for (x in labels) {
     def label = x 
     builders[label] = {
       stage ("build"{
-      node(label) {
-	echo "CHECKOUT TESTS X"
-	echo "RUN TESTS X"
-	echo "CHECKOUT TESTS Y"
-	echo "RUN TESTS Y"
-}
-stage("post"){
-	node(label){
-	cleanWs()
-	}}
+	      node(label) {
+		echo "CHECKOUT TESTS X"
+		echo "RUN TESTS X"
+		echo "CHECKOUT TESTS Y"
+		echo "RUN TESTS Y"
+		}
+	}
+	stage("post"){
+		node(label){
+			cleanWs()
+		}	
+      	}
       }
-    }
+    
 }
 }
 
