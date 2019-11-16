@@ -8,6 +8,8 @@ for (x in labels) {
       node(label) {
         sh 'pwd'
 	sleep 10
+
+
       }
     }
 }
