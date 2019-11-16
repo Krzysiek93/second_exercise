@@ -1,12 +1,11 @@
-def labels = ['master', 'B'] // labels for Jenkins nodes
+def labels = ['A', 'B'] // labels for Jenkins nodes
 def builders = [:]
 for (x in labels) {
     def label = x 
     builders[label] = {
       node(label) {
-	echo "CHECKOUT TESTS X"
-	echo "RUN TESTS X"
-	def job = build job: 'Tests Y'
+	echo "CHECKOUT TESTS Y"
+	echo "RUN TESTS Y"
       }
     }
 }
