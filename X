@@ -1,0 +1,13 @@
+AGENT_LABEL='master' 
+pipeline {
+	agent { label AGENT_LABEL }
+	stages {
+		stage (CHECKOUT){
+			steps {
+				sh pwd			
+			
+			}		
+		}
+	
+	}
+}
