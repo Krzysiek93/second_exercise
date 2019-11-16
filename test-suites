@@ -4,15 +4,16 @@ for (x in labels) {
     def label = x 
     builders[label] = {
 	node(label) {
-		stage("tets"){
-		echo "CHECKOUT TESTS X"
-		echo "RUN TESTS X"
-		echo "CHECKOUT TESTS Y"
-		echo "RUN TESTS Y"
-		cleanWs()	
+		stage("X SUITE"){
+			echo "CHECKOUT TESTS X"
+			echo "RUN TESTS X"
 		}
-		stage("poste"){
-		sh 'pwd'
+		stage("Y SUITE"){
+			echo "CHECKOUT TESTS Y"
+			echo "RUN TESTS Y"	
+		}
+		stage("CLENUP"){
+			cleanWs()
 		}
 	 }
       }
